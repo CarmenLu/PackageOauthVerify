@@ -4,6 +4,8 @@
  * @Description: 课程表后台socket工具包
  */
 
+
+/*
 import regeneratorRuntime from '../third-party/runtime' // eslint-disable-line
 import { wxRequest } from './wxApi'
 
@@ -87,4 +89,4 @@ function initSocket() {
     })
 }
 
-export { initSocket }
+export { initSocket }*/

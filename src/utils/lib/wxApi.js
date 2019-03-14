@@ -8,7 +8,7 @@
  * 微信接口Promise化
  * @param {Function} fn
  */
-const wxPromisify = function (fn) {
+const wxPromisify = function (fn) {//必须有返回success或者fail的函数
     return function (obj = {}) {
         return new Promise((resolve, reject) => {
             obj.success = function (res) {

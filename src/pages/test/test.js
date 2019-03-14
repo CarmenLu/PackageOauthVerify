@@ -1,9 +1,11 @@
 // pages/test/test.js
 import regeneratorRuntime from '../../utils/third-party/runtime' // eslint-disable-line
 import { api } from '../../config/api'
-import { request, login, authorize } from '../../utils/lib/request'
+//import { request, login, authorize } from '../../utils/lib/request'
 import { showError } from '../../utils/lib/error'
-
+import {wxRequest} from '../../utils/lib/wxApi'
+import {login,authorize} from '../../utils/function/authorize'
+var app=getApp()
 Page({
 
     /**
@@ -26,7 +28,7 @@ Page({
             [e.currentTarget.dataset.key]: e.detail.value
         })
     },
-
+  
     /**
      * 校园网登录方法
      */
@@ -47,9 +49,11 @@ Page({
     /**
      * Oauth授权方法
      */
-    async authorize() {
+   async authorize() {
         try {
-            await authorize()
+
+            authorize();
+
         } catch (e) {
             console.error(e)
             if (e.message.indexOf('Oauth登录过期，请重新登录') > -1) {
