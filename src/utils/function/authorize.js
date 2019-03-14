@@ -119,7 +119,7 @@ const authorize=async function () {
         let skey=await getSkey(json.redirect_uri,code,json.state);
         const test=async function(skey){
             let res =await wxRequest({
-                url:'http://139.199.224.230:7002/user/info',
+                url:api.test,
                 method:'POST',
                 header:{skey:skey}
             })
